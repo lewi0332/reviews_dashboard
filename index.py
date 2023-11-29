@@ -24,7 +24,7 @@ load_dotenv()
 
 # Access environment variables
 
-PROJECT_ID = os.getenv('GOOGLE_CLOUD_PROJECT')
+PROJECT_ID = os.getenv('GCP_PROJECT')
 print(PROJECT_ID)
 
 
