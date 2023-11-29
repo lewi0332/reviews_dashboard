@@ -21,4 +21,4 @@ wordcloud
 dash-auth
 fsspec
 gcsfs
-
+google-cloud-secret-manager==2.10.0
