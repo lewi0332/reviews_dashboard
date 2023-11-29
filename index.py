@@ -13,7 +13,7 @@ from dash.dependencies import Input, Output, State
 import dash_auth
 import plotly.io as pio
 import dash_bootstrap_components as dbc
-from google.cloud import secretmanager
+# from google.cloud import secretmanager
 from plotly_theme_light import plotly_light
 from main import server, app
 from apps import home, page1, page2
@@ -38,8 +38,8 @@ load_dotenv()
 # UN = access_secret_version("UN")
 # PW = access_secret_version("PW")
 
-UN = "admin"
-PW = "admin"
+UN = 'admin'
+PW = 'admin'
 
 VALID_USERNAME_PASSWORD_PAIRS = {
     UN: PW
