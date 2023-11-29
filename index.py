@@ -13,6 +13,7 @@ from dash.dependencies import Input, Output, State
 import dash_auth
 import plotly.io as pio
 import dash_bootstrap_components as dbc
+import google_cloud_secret_manager as gcsm
 from plotly_theme_light import plotly_light
 from main import server, app
 from apps import home, page1, page2
@@ -22,8 +23,20 @@ pio.templates.default = "plotly_light"
 load_dotenv()
 
 # Access environment variables
-UN = os.getenv('UN')
-PW = os.getenv('PW')
+
+PROJECT_ID = os.getenv('GOOGLE_CLOUD_PROJECT')
+print(PROJECT_ID)
+
+
+def access_secret_version(secret_id, version_id="latest"):
+    client = secretmanager.SecretManagerServiceClient()
+    name = f"projects/{PROJECT_ID}/secrets/{secret_id}/versions/{version_id}"
+    response = client.access_secret_version(name=name)
+    return response.payload.data.decode('UTF-8')
+
+
+UN = access_secret_version("UN")
+PW = access_secret_version("PW")
 
 VALID_USERNAME_PASSWORD_PAIRS = {
     UN:PW
