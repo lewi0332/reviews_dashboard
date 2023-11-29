@@ -24,19 +24,22 @@ load_dotenv()
 
 # Access environment variables
 
-PROJECT_ID = os.getenv('GCP_PROJECT')
-print(PROJECT_ID)
+# PROJECT_ID = os.getenv('GCP_PROJECT')
+# print(PROJECT_ID)
 
 
-def access_secret_version(secret_id, version_id="latest"):
-    client = secretmanager.SecretManagerServiceClient()
-    name = f"projects/{PROJECT_ID}/secrets/{secret_id}/versions/{version_id}"
-    response = client.access_secret_version(name=name)
-    return response.payload.data.decode('UTF-8')
+# def access_secret_version(secret_id, version_id="latest"):
+#     client = secretmanager.SecretManagerServiceClient()
+#     name = f"projects/{PROJECT_ID}/secrets/{secret_id}/versions/{version_id}"
+#     response = client.access_secret_version(name=name)
+#     return response.payload.data.decode('UTF-8')
 
 
-UN = access_secret_version("UN")
-PW = access_secret_version("PW")
+# UN = access_secret_version("UN")
+# PW = access_secret_version("PW")
+
+UN = "admin"
+PW = "admin"
 
 VALID_USERNAME_PASSWORD_PAIRS = {
     UN: PW
