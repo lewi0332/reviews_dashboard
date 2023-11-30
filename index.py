@@ -27,19 +27,19 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 # Access environment variables
 
-PROJECT_ID = os.getenv('GOOGLE_CLOUD_PROJECT')
-print(PROJECT_ID)
+# PROJECT_ID = os.getenv('GOOGLE_CLOUD_PROJECT')
+# print(PROJECT_ID)
 
 
-def access_secret_version(secret_id, version_id="latest"):
-    client = secretmanager.SecretManagerServiceClient()
-    name = f"projects/{PROJECT_ID}/secrets/{secret_id}/versions/{version_id}"
-    response = client.access_secret_version(name=name)
-    return response.payload.data.decode('UTF-8')
+# def access_secret_version(secret_id, version_id="latest"):
+#     client = secretmanager.SecretManagerServiceClient()
+#     name = f"projects/{PROJECT_ID}/secrets/{secret_id}/versions/{version_id}"
+#     response = client.access_secret_version(name=name)
+#     return response.payload.data.decode('UTF-8')
 
 
-UN = access_secret_version("UN")
-PW = access_secret_version("PW")
+# UN = access_secret_version("UN")
+# PW = access_secret_version("PW")
 
 
 # VALID_USERNAME_PASSWORD_PAIRS = {
@@ -206,7 +206,7 @@ for i in [2]:
 app.layout = html.Div([
     dcc.Location(id='url', refresh=True),
     navbar,
-    modal,
+    # modal,
     html.Div(id='page-content', style={
         'margin-right': '70px',
         'margin-left': '50px'
@@ -252,19 +252,19 @@ def display_page(pathname):
         return '404'
 
 
-@app.callback(
-    Output('modal', 'is_open'),
-    [Input('login_btn', 'n_clicks')],
-    [State('username', 'value'),
-     State('password', 'value')])
-def usernamecall(clicks, username, password):
-    if clicks == 0 or clicks is None:
-        raise PreventUpdate
+# @app.callback(
+#     Output('modal', 'is_open'),
+#     [Input('login_btn', 'n_clicks')],
+#     [State('username', 'value'),
+#      State('password', 'value')])
+# def usernamecall(clicks, username, password):
+#     if clicks == 0 or clicks is None:
+#         raise PreventUpdate
 
-    if username == UN and password == PW:
-        return False
-    else:
-        return True
+#     if username == UN and password == PW:
+#         return False
+#     else:
+#         return True
 
 
 
