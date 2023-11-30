@@ -40,17 +40,17 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 # UN = access_secret_version("UN")
 # PW = access_secret_version("PW")
 
-UN = "admin"
-PW = "admin"
+# UN = "admin"
+# PW = "admin"
 
-VALID_USERNAME_PASSWORD_PAIRS = {
-    UN: PW
-}
+# VALID_USERNAME_PASSWORD_PAIRS = {
+#     UN: PW
+# }
 
-auth = dash_auth.BasicAuth(
-    app,
-    VALID_USERNAME_PASSWORD_PAIRS
-)
+# auth = dash_auth.BasicAuth(
+#     app,
+#     VALID_USERNAME_PASSWORD_PAIRS
+# )
 
 COMPANY_LOGO ="DATALOGO.jpg"
 
