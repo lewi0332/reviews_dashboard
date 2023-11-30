@@ -1,5 +1,6 @@
 service: reviews
 runtime: python311
+instance_class: B4_1G
 
 basic_scaling:
     max_instances: 2
@@ -10,7 +11,7 @@ resources:
     memory_gb: 2
     disk_size_gb: 10
 
-entrypoint: gunicorn -b 0.0.0.0:8080 index:server
+entrypoint: gunicorn -b :$PORT index:server
 
 
 

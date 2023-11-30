@@ -27,7 +27,7 @@ external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 # Access environment variables
 
-PROJECT_ID = os.getenv('GCP_PROJECT')
+PROJECT_ID = os.getenv('GOOGLE_CLOUD_PROJECT')
 print(PROJECT_ID)
 
 
