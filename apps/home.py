@@ -148,19 +148,4 @@ layout = dbc.Container([
             ]
         )
     ]),
-    dbc.Row([
-        dbc.Col(
-            [
-                dcc.Markdown(id='intro',
-                children = """
-                ---
-                # Next Steps
-                ---
-
-                discuss any potential next steps or future work
-                """
-                ),
-            ]
-        )
-    ]),
 ])
